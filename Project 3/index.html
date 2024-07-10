@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Slot Machine with Rolling Effect</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url(images/slot-machine.jpg) no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+        }
+        .slot-machine {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .reels {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .reel {
+            width: 20vw;
+            height: 20vw;
+            max-width: 100px;
+            max-height: 100px;
+            border: 1px solid #fff;
+            font-size: 5vw;
+            max-font-size: 30px;
+            line-height: 20vw;
+            max-line-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .reel-content {
+            position: absolute;
+            width: 100%;
+            height: 300%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.5s ease-out;
+        }
+        .reel-content div {
+            height: 33.33%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e6b800;
+        }
+        @media (max-width: 600px) {
+            .reel {
+                width: 30vw;
+                height: 30vw;
+                font-size: 7.5vw;
+                line-height: 30vw;
+            }
+            button {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slot-machine">
+        <div class="reels">
+            <div id="reel1" class="reel">
+                <div class="reel-content">7</div>
+            </div>
+            <div id="reel2" class="reel">
+                <div class="reel-content">7</div>
+            </div>
+            <div id="reel3" class="reel">
+                <div class="reel-content">7</div>
+            </div>
+        </div>
+        <button onclick="spin()">Spin</button>
+        <p id="result"></p>
+    </div>
+
+    <script src="slotMachine.js"></script>
+</body>
+</html>

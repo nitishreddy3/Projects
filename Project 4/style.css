@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(images/mines.webp);
+    background-size: cover;
+    color: #fff;
+}
+
+#mine-count{
+    margin: 20px 0;
+}
+#game-container {
+    text-align: center;
+}
+
+#controls {
+    margin-bottom: 10px;
+}
+
+#game-board {
+    display: grid;
+    gap: 2px;
+    margin-bottom: 10px;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    background-color: #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+}
+
+.cell.revealed {
+    background-color: #888;
+    cursor: default;
+}
+
+.cell.mine {
+    background-color: red;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
